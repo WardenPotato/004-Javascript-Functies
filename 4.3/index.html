@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .slideholder{
+            height: 150px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="slideholder" id="slideholder"></div>
+<div class="slideholder" id="slideholder2"></div>
+<div class="slideholder" id="slideholder3"></div>
+
+<script>
+
+    var plaatjes = [1,2,3];
+    var teller = 0;
+    var teller2 = 0;
+    var teller3 = 0;
+    var slideholder = document.getElementById("slideholder");
+    slideholder.style.backgroundImage = "url('img/eyes/1.png')";
+
+    slideholder.addEventListener("click", function () {
+        slideholder.style.backgroundImage = "url('img/eyes/" + getNumber() + ".png')";
+    });
+
+    var slideholder2 = document.getElementById("slideholder2");
+    slideholder2.style.backgroundImage = "url('img/nose/1.png')";
+
+    slideholder2.addEventListener("click", function () {
+        slideholder2.style.backgroundImage = "url('img/nose/" + getNumber2() + ".png')";
+    });
+
+    var slideholder3 = document.getElementById("slideholder3");
+    slideholder3.style.backgroundImage = "url('img/mouth/1.png')";
+
+    slideholder3.addEventListener("click", function () {
+        slideholder3.style.backgroundImage = "url('img/mouth/" + getNumber3() + ".png')";
+    });
+
+    function getNumber() {
+        if(teller >= plaatjes.length){
+            teller = 1;
+        } else{
+            teller++;
+        }
+        return teller;
+    }
+    function getNumber2() {
+        if(teller2 >= plaatjes.length){
+            teller2 = 1;
+        } else{
+            teller2++;
+        }
+        return teller2;
+    }
+    function getNumber3() {
+        if(teller3 >= plaatjes.length){
+            teller3 = 1;
+        } else{
+            teller3++;
+        }
+        return teller3;
+    }
+
+</script>
+
+</body>
+</html>
